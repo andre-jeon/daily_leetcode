@@ -34,11 +34,14 @@ class Solution(object):
         :type x: int
         :rtype: bool
         """
+        # check if the number is less than 10 return False
+        # i don't belive in single digits being a palindrome
+        if x < 10:
+            return False
+
         # reverse x and check if it's equal to x
         # checking if stringified x is equal to reversed stringified x
-        if str(x) == str(x)[::-1]:
-            return True
-        return False
+        return str(x) == str(x)[::-1]
 
 
     x = 121

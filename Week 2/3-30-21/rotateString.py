@@ -20,23 +20,7 @@ class Solution(object):
         :type B: str
         :rtype: bool
         """
-        # case 1
-        # check if the length of A and B is equal
-        if len(A) == len(B):
-            # check the index of the first letter of A in B
-            #
-            C = A
-            
-            for item in range(len(A)):
-
-                C = C + A[item]
-                C = C [1:len(C)]
-
-                if C == B:
-                    return True
-
-        # if not return False
-        return False
+        return len(A) == len(B) and B in A+A
     
 
     A = 'abcde'

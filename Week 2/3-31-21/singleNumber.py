@@ -22,21 +22,25 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        # iterate num in nums
-        # add to mapping if it's not already in the mapping
-        # give the value 1
-        # if the value is in mapping
-        # add 1 to the value
-
         # utilize the count function
         # iterate num in nums
         # if num in nums.count(num) is equal to 1 return num
         # if not continue
         for num in nums:
+            # apparently the count method takes up too much time
             if nums.count(num) == 1:
                 return num
             else:
                 continue
+        
+        # List Operation
+        no_duplicate_list = []
+        for i in nums:
+            if i not in no_duplicate_list:
+                no_duplicate_list.append(i)
+            else:
+                no_duplicate_list.remove(i)
+        return no_duplicate_list.pop()
 
 
     nums = [4,1,2,1,2]

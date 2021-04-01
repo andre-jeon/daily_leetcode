@@ -36,8 +36,27 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        # find the length of nums
-        # and the range becomes 0 - len(nums)
+        nums.sort()
 
+        # Ensure that n is at the last index
+        if nums[-1] != len(nums):
+            return len(nums)
+        # Ensure that 0 is at the first index
+        elif nums[0] != 0:
+            return 0
+        
         # for loop the range and check to see if the number is in nums
         # if it is continue, if it's not return the num in range
+        for i in range(len(nums)):
+            if i in nums:
+                continue
+            # checking if i is not in nums
+            # and len(nums)
+            elif i not in nums:
+                return i
+
+    
+
+    nums = [0,1]
+    
+    print(missingNumber(nums))

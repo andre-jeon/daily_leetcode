@@ -31,7 +31,7 @@ class Solution(object):
                 counter = 0
 
         # return maximum number in the list
-        return max(ans)
+        return ans
 
     nums = [1,1,0,1,1,1]
     print(findMaxConsecutiveOnes(nums))

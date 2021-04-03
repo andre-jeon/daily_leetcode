@@ -28,6 +28,17 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        # sort the nums in descending order
+        sorted_nums = nums.sort(reverse = True)
 
+        # check if the length of nums is less than 3
+        if len(sorted_nums) < 3:
+            return sorted_nums[0]
+            # if it's less than three then return the last value
+            # since it's sorted from biggest to smallest
+        
+        # else return the 3rd value
+        return sorted_nums[2]
 
     nums = [3,2,1]
+    print(thirdMax(nums))

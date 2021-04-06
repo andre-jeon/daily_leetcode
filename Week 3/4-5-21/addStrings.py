@@ -23,10 +23,30 @@ class Solution(object):
         :type num2: str
         :rtype: str
         """
+        # Easy Solution
         # turn both num1 and num2 into integer
         num1, num2 = int(num1), int(num2)
         # add them together and return in string format
         return str(num1 + num2)
+        res = []
+
+        # Pointer Solution
+        carry = 0
+        p1 = len(num1) - 1
+        p2 = len(num2) - 1
+        while p1 >= 0 or p2 >= 0:
+            x1 = ord(num1[p1]) - ord('0') if p1 >= 0 else 0
+            x2 = ord(num2[p2]) - ord('0') if p2 >= 0 else 0
+            value = (x1 + x2 + carry) % 10
+            carry = (x1 + x2 + carry) // 10
+            res.append(value)
+            p1 -= 1
+            p2 -= 1
+        
+        if carry:
+            res.append(carry)
+        
+        return ''.join(str(x) for x in res[::-1])
 
     num1 = "11"
     num2 = "123"

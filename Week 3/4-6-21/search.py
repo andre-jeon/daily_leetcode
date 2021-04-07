@@ -31,11 +31,29 @@ class Solution(object):
 
         # create a while loop
         # that goes until low and high become equal
-        while high >= low:
-            continue
+        while low <= high:
+            # create a variable that checks the middle of the list
+            # floor divide will round down numbers to whole numbers
+            mid_point = (low + high) // 2
 
+            # check if the index of mid_point of nums
+            # is equal to target
+            if nums[mid_point] == target:
+                return mid_point
 
-
+            # check if mid_point is less than the target
+            if nums[mid_point] < target:
+                # it means low can come up mid_point + 1
+                # the search starts with the new low
+                # starting with mid_point + 1
+                low = mid_point + 1
+            
+            # check if mid_point is greater than the target
+            if nums[mid_point] > target:
+                # it means high can come down mid_point - 1
+                # the search starts with the new high
+                # starting with mid_point - 1
+                high = mid_point + 1
 
         # if target is not in nums return -1
         return -1
@@ -44,7 +62,7 @@ class Solution(object):
 
     nums = [-1,0,3,5,9,12]
     target = 9
-    
+
     print(search(nums, target))
 
 

@@ -53,7 +53,7 @@ class Solution(object):
                 # it means high can come down mid_point - 1
                 # the search starts with the new high
                 # starting with mid_point - 1
-                high = mid_point + 1
+                high = mid_point - 1
 
         # if target is not in nums return -1
         return -1
@@ -61,7 +61,7 @@ class Solution(object):
     
 
     nums = [-1,0,3,5,9,12]
-    target = 9
+    target = 2
 
     print(search(nums, target))
 

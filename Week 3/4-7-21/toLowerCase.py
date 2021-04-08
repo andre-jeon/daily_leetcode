@@ -23,5 +23,17 @@ class Solution(object):
         :type str: str
         :rtype: str
         """
+        # built in approah
+        return str.lower()
+
+        # hashmap with zip approach
+        upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        lower = "abcdefghijklmnopqrstuvwxyz"
+        h = dict(zip(upper, lower))
         
+        return ''.join([h[x] if x in h else x for x in str])
+
+    str = "Hello"
+    print(toLowerCase(str))
+
         

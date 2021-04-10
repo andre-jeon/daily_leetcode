@@ -39,4 +39,8 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        
+        # iterate the list
+        # check if the one next to current is greater than the current
+        # if it is then add them together
+
+        # if it is not then move on to the next

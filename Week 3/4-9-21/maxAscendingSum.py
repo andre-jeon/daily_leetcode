@@ -34,13 +34,27 @@ Output: 100
 
 
 class Solution(object):
-    def maxAscendingSum(self, nums):
+    def maxAscendingSum(nums):
         """
         :type nums: List[int]
         :rtype: int
         """
-        # iterate the list
-        # check if the one next to current is greater than the current
-        # if it is then add them together
+        max_num = 0
 
-        # if it is not then move on to the next
+        # iterate the list
+        for i in range(len(nums) - 1):
+            # check if the one next to current is greater than the current
+            if nums[i] < nums[i + 1]:
+                # if it is then add them together to max_num
+                max_num = max_num + nums[i] + nums[i + 1] 
+
+            # if it is not initialize max_num to zero
+            # then move on to the next
+            elif nums[i] > nums[i + 1]:
+                max_num = 0
+        
+        return max_num
+    
+
+    nums = [10,20,30,5,10,50]
+    print(maxAscendingSum(nums))

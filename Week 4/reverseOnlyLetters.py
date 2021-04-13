@@ -37,13 +37,23 @@ class Solution(object):
 
         # create a while loop 
         # where while start is less than or equal to last
-        while start <= last:
-            # the value of start and last switches
-            s[start], s[last] = s[last], s[start]
-            # add 1 to start and subtract 1 from last 
-            # to get the while loop going
-            start += 1
-            last -= 1
+        while start < last:
+            # check if both pointers are alphabets
+            if s[start].isalpha() and s[last].isalpha():
+                # the value of both start and last switches
+                s[start], s[last] = s[last], s[start]
+                # add 1 to start and subtract 1 from last 
+                # to get the while loop going
+                start += 1
+                last -= 1
+            # check if only start is alphabetical
+            elif s[start].isalpha() and s[last].isalpha():
+                continue
+
+            # check if only last is alphabetical
+            elif s[start].isalpha() and s[last].isalpha():
+                continue
+
         
         return ''.join(s)
 

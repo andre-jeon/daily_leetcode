@@ -19,20 +19,41 @@ class Solution(object):
         :type A: List[int]
         :rtype: List[int]
         """
-        ans = []
-        # iterate the list
+        # evens = []
+        # odds = []
+        # # iterate the list
+        # for i in A:
 
-        # check if the element is even
-        # if it is add it to ans
+        #     # check if the element is even
+        #     if i % 2 == 0:
 
-        # if the element is not even
-        # add it to a separte ans2
+        #         # if it is add it to evens
+        #         evens.append(i)
 
-        # add both ans and ans2 and return them 
+        #     # if the element is not even
+        #     else:
 
-    
+        #         # add it to a separte odds
+        #         odds.append(i)
+
+        # # add both ans and ans2 and return them
+        # return evens + odds
+
+        evens = []
+        odds = []
+
+        for x in A:
+            if x % 2 == 0:
+                evens.append(x)
+
+        for x in A:
+            if x % 2 == 1:
+                odds.append(x)
 
 
+        return evens + odds
+
+        return ([x for x in A if x % 2 == 0] + [x for x in A if x % 2 == 1])
 
     A = [3,1,2,4]
     print(sortArrayByParity(A))

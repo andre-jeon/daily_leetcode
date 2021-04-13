@@ -19,7 +19,17 @@ class Solution(object):
         :type A: List[int]
         :rtype: List[int]
         """
-        
+        ans = []
+        # iterate the list
+
+        # check if the element is even
+        # if it is add it to ans
+
+        # if the element is not even
+        # add it to a separte ans2
+
+        # add both ans and ans2 and return them 
+
     
 
 

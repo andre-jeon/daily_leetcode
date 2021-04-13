@@ -29,6 +29,7 @@ class Solution(object):
         """
         # start from the beginning and the end
         # swapping method as if it is reversing the whole thing
+        s = list(s)
         
         # create values start and last
         start = 0
@@ -38,13 +39,13 @@ class Solution(object):
         # where while start is less than or equal to last
         while start <= last:
             # the value of start and last switches
-            s[start] = s[last], s[last] = s[start]
+            s[start], s[last] = s[last], s[start]
             # add 1 to start and subtract 1 from last 
             # to get the while loop going
             start += 1
             last -= 1
         
-        return s
+        return ''.join(s)
 
     s = "ab-cd"
     print(reverseOnlyLetters(s))

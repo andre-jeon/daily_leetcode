@@ -22,16 +22,16 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        # my attempt
-        # check if the length of s and t is equal
-        if len(s) != len(t):
-            # if it is not return False
-            return False
+        # # my attempt
+        # # check if the length of s and t is equal
+        # if len(s) != len(t):
+        #     # if it is not return False
+        #     return False
 
-        # sort both s and t and check if they are equal
-        if sorted(s) == sorted(t):
-            return True
-        return False
+        # # sort both s and t and check if they are equal
+        # if sorted(s) == sorted(t):
+        #     return True
+        # return False
 
         # hashmap approach
         dictionary = {}

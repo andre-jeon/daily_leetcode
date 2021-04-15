@@ -29,32 +29,48 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        mapping = {}
-        ans = []
+        rev_sorted = sorted(nums,reverse=1)
 
-        # iterate nums
-        # and push it into hashmap with the key being it's frequency
-        # mapping = {1: 2, 2: 3, 3: 1}
-        for num in nums:
-            if num in mapping:
-                mapping[num] += 1
-            else:
-                mapping[num] = 1
+        # nums.count counts how many of them exists
+        return sorted(rev_sorted, key=nums.count)
+
+        # mapping = {}
+        # ans = []
+
+        # # iterate nums
+        # # and push it into hashmap with the key being it's frequency
+        # # mapping = {1: 2, 2: 3, 3: 1}
+        # for num in nums:
+        #     if num in mapping:
+        #         mapping[num] += 1
+        #     else:
+        #         mapping[num] = 1
         
-        # iterate mapping
-        # we need the less frequent(lowest value) to be in the front
-        # for i in mapping:
-        #     # this returns the value
-        #     return mapping.get(i)
+        # # this line creates a new dictionary sorted by value
+        # # sorted_mapping = {3: 1, 1: 2, 2: 3}
+        # # Output: [3,1,1,2,2,2]
+        # sorted_mapping = dict(sorted(mapping.items(), key=lambda x: x[1]))
 
+        # counter = 0
 
-        sorted_mapping = dict(sorted(mapping.items(), key=lambda x: x[1]))
+        # for i in sorted_mapping:
+
+        #     if counter == sorted_mapping[i]:
+        #         break
+            
+        #     counter = sorted_mapping[i]
+
+        #     # 1, 2, 3
+        #     freq = sorted_mapping[i]
+
+        #     for j in range(freq):
+        #         ans.append(i)
         
-        return sorted_mapping
-
+        # return ans
     
-
-    nums = [1,1,2,2,2,3]
+    # 33221
+    # 13322
+    nums = [2,3,1,3,2]
 
     print(frequencySort(nums))
 

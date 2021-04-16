@@ -34,7 +34,14 @@ class Solution(object):
         :type t: str
         :rtype: str
         """
-        # 
+        # if s is none return t 
+        # since that is probably the letter that was added
+        if s == "":
+            return t
+        
+        # sort both s and t
+
+        # check if their length is different?
 
     
 

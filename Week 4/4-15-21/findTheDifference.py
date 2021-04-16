@@ -38,10 +38,40 @@ class Solution(object):
         # since that is probably the letter that was added
         if s == "":
             return t
-        
-        # sort both s and t
 
-        # check if their length is different?
+        list_t = list(t)
+
+        # iterate s
+        for i in list(s):
+            # whatever letter it is currently
+            # you remove that letter from t
+            list_t.remove(i)
+            # so whatever is left you return it
+        
+        return list_t[0]
+
+        # s = list(s)
+        # t = list(t)
+        # s.sort()
+        # t.sort()
+        
+        # for i in range(len(t)):
+        #     if i == len(s):
+        #         return t[i]
+        #     elif s[i] == t[i]:
+        #         continue
+        #     else: 
+        #         return t[i]
+
+
+    s = "abcd"
+    t = "abcde"
+    
+    print(findTheDifference(s, t))
+
+
+
+
 
     
 

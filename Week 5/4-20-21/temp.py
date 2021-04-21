@@ -35,4 +35,6 @@ class Solution(object):
         """
         word1 = "".join(word1)
         word2 = "".join(word2)
+        # 420 BLAZE IT
+        # DOGE COIN TO THE MOON
         return word1 == word2

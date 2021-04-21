@@ -26,8 +26,10 @@ class Solution(object):
 
         alph = 'abcdefghijklmnopqrstuvwxyz'
         alph = list(alph)
+
         sentence = list(set(sentence))
         sentence.sort()
+        
         if alph == sentence:
             return True
         return False

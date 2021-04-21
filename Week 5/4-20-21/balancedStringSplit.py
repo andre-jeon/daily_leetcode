@@ -38,5 +38,21 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
+        counter = 0
+        ans = 0
+
+        # iterate the string
+        # "LLLLRRRR"
+        for i in s:
+            # whatever letter the string starts with you add 1 to counter
+            if i == "L":
+                counter += 1
+            # whatever the letter that is not the first letter subtract 1 from counter
+            if i =="R":
+                counter -= 1
+
+        # check counter and whenever the counter is equal to 0 add 1 to ans
+            if counter == 0:
+                ans += 1
         
-        
+        return ans

@@ -32,25 +32,56 @@ Explanation: The product of all values in the array is -1, and signFunc(-1) = -1
 
 class Solution(object):
     def arraySign(nums):
-        import math
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        # multiply all the num in nums
-        nums = math.prod(nums)
+        # import math
+        # """
+        # :type nums: List[int]
+        # :rtype: int
+        # """
+        # # multiply all the num in nums
+        # nums = math.prod(nums)
 
-        # check if product is 0
-        if nums == 0:
-            # if it is, return 0
+        # # for loop approach
+        # # if you don't want to import anything
+        # x = 1
+        # for i in nums:
+        #     x *= i
+
+        # # check if product is 0
+        # if nums == 0:
+        #     # if it is, return 0
+        #     return 0
+
+        # # check if product is less than 0
+        # if nums < 0:
+        #     # return -1
+        #     return -1
+        # return 1
+
+        # optimized approach?
+
+        # check if 0 is in nums
+        # return 0 if it contains 0
+        if 0 in nums:
             return 0
+		
+        # set up a initial counter
+        count = 0
 
-        # check if product is less than 0
-        if nums < 0:
-            # return -1
-            return -1
-        return 1
-    
+        # iterate nums to check if i is less than 0
+        # or if it's divisible by 2
+        for i in nums:
 
-    nums = [-1,-2,-3,-4,3,2,1]
+            # if i is less than 0
+            if i < 0:
+                # add 1 to the counter
+                count += 1
+        
+        # return 1 if count is divisible by 2
+        # else return -1
+
+        # odd negaive numbers means negative overall product
+        # while even negative numbers mean positive overal product
+        return 1 if count % 2 == 0 else -1
+
+    nums = [-1,1,-1,1,-1]
     print(arraySign(nums))

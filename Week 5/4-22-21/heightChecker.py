@@ -1,3 +1,4 @@
+from collections import defaultdict
 '''
 A school is trying to take an annual photo of all the students. The students are asked to stand in a single file line in non-decreasing order by height. Let this ordering be represented by the integer array expected where expected[i] is the expected height of the ith student in line.
 
@@ -32,16 +33,42 @@ heights:  [1,2,3,4,5]
 expected: [1,2,3,4,5]
 All indices match.
 '''
-
 class Solution(object):
     def heightChecker(heights):
         """
         :type heights: List[int]
         :rtype: int
         """
-        heights.sort()
-        return heights
+        # # create a variable that is the sorted version of heights
+        # sorted_heights = sorted(heights)
+
+        # my_dict = defaultdict(list)
+
+        # for k, v in zip(heights, sorted_heights):
+        #     my_dict[k].append(v)
+
+        # # zip height and sorted_heights into a hashmap
+        # # mapping = dict(zip(heights, sorted_heights))
+
+        # counter = 0
+
+        # # iterate the hashmap and check if key value is equal
+        # for i in my_dict:
+        #     # if not then add 1 to counter
+        #     if i != my_dict[i]:
+        #         counter += 1
+        #     continue
+
+        # return my_dict
+
+        sorted_arr = sorted(heights)
+        diff = 0
+        for s in range(len(sorted_arr)):
+            if sorted_arr[s] != heights[s]:
+                diff +=1
+            else: continue
+        return diff
     
-    heights = [1,1,4,2,1,3]
+    heights = [2,1,2,1,1,2,2,1]
     print(heightChecker(heights))
         

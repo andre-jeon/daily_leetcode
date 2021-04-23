@@ -76,7 +76,7 @@ class Solution(object):
                 # add 1 to the counter
                 count += 1
         
-        # return 1 if count is divisible by 2
+        # return 1 if count is even
         # else return -1
 
         # odd negaive numbers means negative overall product

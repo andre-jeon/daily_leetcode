@@ -45,14 +45,29 @@ class Solution(object):
         # slice s with [:len(s) // 2] and [(len(s) // 2) + 1:]
         # 'book'
         # 'bo'
-        first = s[:(len(s) // 2) - 1]
+        first = s[:len(s) // 2]
         # 'ok'
         second = s[len(s) // 2:]
 
         # iterate both strings to see if they have vowels
         vowels = 'aeiouAEIOU'
+        f_counter = 0
+        s_counter = 0
 
-        return first, second
+        for i in first:
+            if i in vowels:
+                f_counter += 1
+
+        for j in second:
+            if j in vowels:
+                s_counter += 1
+
+        return f_counter == s_counter
+        
+
+            
+
+
     
     s = "book"
     print(halvesAreAlike(s))

@@ -21,17 +21,28 @@ Input: nums = [1,2,3,4,5]
 Output: 15
 Explanation: The unique elements are [1,2,3,4,5], and the sum is 15.
 '''
-from collections import Counter
-
 class Solution(object):
     def sumOfUnique(nums):
         """
         :type nums: List[int]
         :rtype: int
         """
-        return Counter(nums)
+
+        ans = 0
+        mapping = {}
+
+        for num in nums:
+            if num not in mapping:
+                mapping[num] = 0
+            mapping[num] += 1
+        
+        for i in mapping:
+            if mapping[i] == 1:
+                ans += i
+        
+        return ans
 
     
-    nums = [1,2,3,4,5]
+    nums = [1,2,3,2]
     print(sumOfUnique(nums))
         

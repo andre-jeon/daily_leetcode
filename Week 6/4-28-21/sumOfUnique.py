@@ -37,10 +37,21 @@ class Solution(object):
             mapping[num] += 1
         
         for i in mapping:
-            if mapping[i] == 1:
-                ans += i
+            if mapping[i] == 1: ans += i
         
         return ans
+
+        # hashmap = {}
+        # for i in nums:
+        #     if i in hashmap.keys():
+        #         hashmap[i] += 1
+        #     else:
+        #         hashmap[i] = 1
+
+        # sum = 0
+        # for key, value in hashmap.items():
+        #     if value == 1: sum += key
+        # return sum
 
     
     nums = [1,2,3,2]

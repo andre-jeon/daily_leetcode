@@ -39,5 +39,13 @@ class Solution(object):
         :type k: int
         :rtype: str
         """
-        
-        
+        # split the list where the spaces happen
+        # and create a new list
+        # join the new list up to k - 1
+        # and return it
+        return ' '.join(s.split()[:k])
+    
+    s = "chopper is not a tanuki"
+    k = 5
+
+    print(truncateSentence(s, k))

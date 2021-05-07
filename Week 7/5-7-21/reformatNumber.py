@@ -53,19 +53,30 @@ Output: "175-229-353-94-75"
 
 class Solution:
     def reformatNumber(number: str) -> str:
-
-        # create a list that will contain all the ints from number
-        nums_list = []
-
-        # iternate number and check for int
-        for i in number:
-            if i.isdigit():
-                nums_list.append(int(i))
+        # preprocessing, take out whitespace and dash symbol
+        number = number.replace(' ', '')
+        number = number.replace('-', '')
         
-        # check the length of the list to see if it's divisible by 3?
-        return len(nums_list)
-        # if it is divisible by 3 then 
+        # storage for numbers
+        blocks = []
+        
+        # keep making number blocks of length 3 until remaining length is smaller than 4
+        while len(number) > 4:
+            
+            blocks.append( number[:3])
+            number = number[3:]
+        
+        
+        # tail block handling, followed the rule defined in description
+        if len(number) <= 3:
+            blocks.append( number )
+        else:
+            blocks.append( number[:2])
+            blocks.append( number[2:])
+        
+		# generate reformatted numbers, separated by dash
+        return '-'.join(blocks)
     
 
-    number = "1-23-45 6"
+    number = "1-23"
     print(reformatNumber(number))

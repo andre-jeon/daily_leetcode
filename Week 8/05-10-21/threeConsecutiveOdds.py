@@ -16,14 +16,29 @@ Explanation: [5,7,23] are three consecutive odds.
 
 
 class Solution:
-    def threeConsecutiveOdds(self, arr: List[int]) -> bool:
+    def threeConsecutiveOdds(arr):
         counter = 0
+
         # iterate arr
-        # check if i in arr is odd
-            # if it is increase the counter + 1
-                # check if counter is 3 
-                # if it is return true
+        for i in arr:
+
+            # check if i in arr is odd
+            if i % 2 != 0:
+
+                # if it is increase the counter + 1
+                counter += 1
+
+                # check if counter is 3
+                if counter == 3:
+                    # if it is return true
+                    return True
+
             # if it's not counter is 0(reset)
-            # and continue 
+            else:
+                counter = 0
         
         # return false when it's done
+        return False
+    
+    arr = [2,6,4,1]
+    print(threeConsecutiveOdds(arr))

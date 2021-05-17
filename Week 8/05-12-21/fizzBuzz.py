@@ -52,6 +52,7 @@ class Solution:
                 ans.append(i)
         
         # return ans
+        # checking for tings
         return ans
 
     n = 3

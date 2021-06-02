@@ -3,20 +3,21 @@ Given a signed 32-bit integer x, return x with its digits reversed. If reversing
 
 Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
 
- 
-
 Example 1:
 
 Input: x = 123
 Output: 321
+
 Example 2:
 
 Input: x = -123
 Output: -321
+
 Example 3:
 
 Input: x = 120
 Output: 21
+
 Example 4:
 
 Input: x = 0
@@ -25,7 +26,15 @@ Output: 0
 
 class Solution:
     def reverse(x: int) -> int:
-        print("Hello World")
-    
+        reversed_x = int(str(x)[::-1].replace('-',''))
 
-    reverse(5)
+        if reversed_x.bit_length() > 31:
+            return 0
+        
+        if x < 0:            
+            return reversed_x * -1
+        return reversed_x
+    
+    x = -321
+
+    print(reverse(x))

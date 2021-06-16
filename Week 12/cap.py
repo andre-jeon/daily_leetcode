@@ -11,7 +11,16 @@
 '''
 class Solution:
     def cap(str):
-        continue
+        # create an empty list that will contain the joined words
+        words = []
 
-    str = 'a short sentence'
+        # split str where spaces happen
+        splited_str = str.split()
+
+        for word in splited_str:
+            words.append(word[0].upper() + word[1:])
+
+        return ' '.join(words)
+
+    str = 'look, it is working!'
     print(cap(str))
